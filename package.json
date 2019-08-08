@@ -1,20 +1,41 @@
 {
   "name": "spark",
   "version": "0.1.0",
+  "main": "public/electron.js",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.1",
     "@types/react": "16.8.25",
     "@types/react-dom": "16.8.5",
+    "@types/react-router-dom": "^4.3.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
+    "typescript": "3.4.5"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
+    "electron": "^6.0.0",
+    "electron-builder": "^21.2.0",
+    "react-dev-tools": "0.0.1",
+    "wait-on": "^3.3.0"
+  },
+  "build": {
+    "appId": "spark.demo",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   },
   "scripts": {
+    "estart": "concurrently \"cross-env BROWSER=none yarn react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn react-build && yarn electron-build",
+    "electron-build": "electron-builder",
+    "react-build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

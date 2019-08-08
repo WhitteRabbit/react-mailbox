@@ -1,0 +1,43 @@
+.app-mailbox{
+    margin-left: 200px;
+    width: 350px;
+    border: 1px solid #a1a1a1;
+    height: 100%;
+    position: fixed;
+}
+
+.app-mail{
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 30px;
+    line-height: 1.4em;
+    position: relative;
+}
+
+.app-mail:hover {
+    background: #e8e9eb;
+}
+
+.app-mail > div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-mail .mail-date{
+    font-size: 14px;
+}
+.app-mail .mail-subject{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.app-mail a {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.app-mail.unread {
+  font-weight: bold;
+}

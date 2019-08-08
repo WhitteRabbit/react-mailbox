@@ -1,0 +1,9 @@
+#app-content-container{
+    margin-left: 550px;
+    background: #f4f4f4;
+    position: fixed;
+    width: calc(100% - 580px);
+    height: 100%;
+    border-left: 1px solid #a1a1a1;
+    padding: 15px;
+}
